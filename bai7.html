@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<input type="number" id="noiMang" placeholder="Số phút nội mạng">
+<input type="number" id="ngoaiMang" placeholder="Số phút ngoại mạng">
+<button onclick="tienDienThoai()">Tính tiền</button>
+<p id="ketQuaCuoc"></p>
+</body>
+<script>
+    function tienDienThoai() {
+        let phutNoiMang = parseInt(document.getElementById("noiMang").value);
+        let phutNgoaiMang = parseInt(document.getElementById("ngoaiMang").value);
+        let cuocDienThoai = 0;
+        if (phutNoiMang <= 180) {
+            if (phutNgoaiMang <= 60) {
+                document.getElementById("ketQuaCuoc").innerHTML = "Cước bằng: " + cuocDienThoai;
+            } else {
+                cuocDienThoai = (phutNgoaiMang - 60) * 1200;
+                document.getElementById("ketQuaCuoc").innerHTML = "Cước bằng: " + cuocDienThoai;
+            }
+        } else if (phutNgoaiMang <= 60) {
+            cuocDienThoai = (phutNoiMang - 180) * 650;
+            document.getElementById("ketQuaCuoc").innerHTML = "Cước bằng: " + cuocDienThoai;
+        } else {
+            cuocDienThoai = (phutNgoaiMang - 60) * 1200 + (phutNoiMang - 180) * 650;
+            document.getElementById("ketQuaCuoc").innerHTML = "Cước bằng: " + cuocDienThoai;
+        }
+    }
+</script>
+</html>

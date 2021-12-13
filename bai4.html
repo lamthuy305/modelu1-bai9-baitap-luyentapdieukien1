@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất</title>
+</head>
+<body>
+<p>Tìm số lớn nhất</p>
+<input type="text" id="soThuNhat" placeholder="Nhập số a">
+<input type="text" id="soThuHai" placeholder="Nhập số b">
+<input type="text" id="soThuBa" placeholder="Nhập số c">
+<button onclick="soSanh()">Kiểm Tra</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function soSanh() {
+        let soThuNhat = parseInt(document.getElementById("soThuNhat").value);
+        let soThuHai = parseInt(document.getElementById("soThuHai").value);
+        let soThuBa = parseInt(document.getElementById("soThuBa").value);
+        if (soThuNhat > soThuHai) {
+            if (soThuNhat > soThuBa) {
+                document.getElementById("ketQua").innerHTML = "Số lớn nhất là: " + soThuNhat;
+            } else {
+                document.getElementById("ketQua").innerHTML = "Số lớn nhất là: " + soThuBa;
+            }
+        } else if (soThuHai > soThuBa) {
+            document.getElementById("ketQua").innerHTML = "Số lớn nhất là: " + soThuHai;
+        } else {
+            document.getElementById("ketQua").innerHTML = "Số lớn nhất là: " + soThuBa;
+        }
+
+
+    }
+</script>
+</html>

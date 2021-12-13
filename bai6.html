@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+<p>Tính hoa hồng</p>
+<input type="text" id="doanhThu" placeholder="Nhập doanh thu đại lý (triệu đồng)">
+<button onclick="tinhDoanhThu()">Doanh thu</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function tinhDoanhThu() {
+        let doanhThu = parseFloat(document.getElementById("doanhThu").value);
+        const bac1 = 0.1 ;
+        const bac2 = 0.09 ;
+        const bac3 = 0.08 ;
+        const bac4 = 0.07 ;
+        const bac5 = 0.06 ;
+        const bac6 = 0.05 ;
+        let hoaHong = 0;
+        if (doanhThu >= 1000) {
+        hoaHong = doanhThu * bac1 ;
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        } else if (doanhThu >= 900) {
+            hoaHong = doanhThu * bac2 ;
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        } else if (doanhThu >= 800) {
+            hoaHong = doanhThu * bac3
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        } else if (doanhThu >= 700) {
+            hoaHong = doanhThu * bac4
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        } else if (doanhThu >= 600) {
+            hoaHong = doanhThu * bac5
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        } else {
+            hoaHong = doanhThu * bac6
+            document.getElementById("ketQua").innerHTML = "Hoa hồng nhận được là: " + hoaHong ;
+        }
+    }
+
+</script>
+</html>

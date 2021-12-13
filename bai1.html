@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra chia hết</title>
+</head>
+<body>
+<p>Kiểm tra chia hết</p>
+<input type="text" id="soA" placeholder="Nhập số a">
+<input type="text" id="soB" placeholder="Nhập số b">
+<button onclick="kiemTra()">Kiểm tra</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let soA = parseFloat(document.getElementById("soA").value);
+        let soB = parseFloat(document.getElementById("soB").value);
+        if (soA % soB === 0) {
+            document.getElementById("ketQua").innerHTML = "Số " + soA + " chia hết cho số " + soB ;
+        } else {
+            document.getElementById("ketQua").innerHTML = "Số " + soA + " không chia hết cho số " + soB ;
+        }
+    }
+</script>
+</html>

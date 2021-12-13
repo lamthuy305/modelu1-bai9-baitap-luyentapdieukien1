@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xếp hạng học lực</title>
+</head>
+<body>
+<p>Xếp hạng học lực</p>
+<input type="text" id="diemKiemTra" placeholder="Nhập điểm kiểm tra">
+<input type="text" id="diemThiGiuaKy" placeholder="Nhập điểm thi giữa kỳ">
+<input type="text" id="diemThiCuoiKy" placeholder="Nhập điểm thi cuối kỳ">
+<button onclick="xepHang()">Xếp hạng</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function xepHang() {
+        let diemKiemTra = parseInt(document.getElementById("diemKiemTra").value);
+        let diemThiGiuaKy = parseInt(document.getElementById("diemThiGiuaKy").value);
+        let diemThiCuoiKy = parseInt(document.getElementById("diemThiCuoiKy").value);
+        let diemTrungBinh = (diemKiemTra + diemThiGiuaKy * 2 + diemThiCuoiKy * 3) / 6
+        if (diemTrungBinh >= 9) {
+            document.getElementById("ketQua").innerHTML = "Học lực giỏi";
+        } else if (diemTrungBinh >= 8) {
+            document.getElementById("ketQua").innerHTML = "Học lực khá";
+        } else if (diemTrungBinh >= 6.5) {
+            document.getElementById("ketQua").innerHTML = "Học lực trung bình";
+        } else if (diemTrungBinh >= 5) {
+            document.getElementById("ketQua").innerHTML = "Học lực yếu";
+        } else {
+            document.getElementById("ketQua").innerHTML = "Học lực kém";
+        }
+    }
+
+</script>
+</html>
